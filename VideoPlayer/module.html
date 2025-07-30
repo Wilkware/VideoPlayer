@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="card">
+        <video id="player" mozallowfullscreen allowfullscreen></video>
+    </div>
+<script>
+    const player = document.getElementById("player");
+
+    function setBooleanAttribute(el, attr, value) {
+        if (value) {
+            el[attr] = true;
+            el.setAttribute(attr, ""); // imported for e.g. disablePictureInPicture
+        } else {
+            el[attr] = false;
+            el.removeAttribute(attr);
+        }
+    }
+
+    function setControlsList(el, disableDownload) {
+        if (disableDownload) {
+            el.setAttribute("controlsList", "nodownload");
+        } else {
+            el.removeAttribute("controlsList");
+        }
+    }
+
+    // This is where the data is processed by the module.
+    function handleMessage(data) {
+        const decodedData = JSON.parse(data);
+        // source
+        player.src = decodedData.source || "";
+
+        // bool attributes safe set/remove
+        setBooleanAttribute(player, "autoplay", decodedData.autoplay);
+        setBooleanAttribute(player, "muted", decodedData.muted);
+        setBooleanAttribute(player, "loop", decodedData.loop);
+        setBooleanAttribute(player, "controls", decodedData.controls);
+        setBooleanAttribute(player, "disablePictureInPicture", decodedData.pip);
+
+        // special case controlsList
+        setControlsList(player, decodedData.list);
+
+        // background color
+        if (decodedData.color) {
+            player.style.backgroundColor = decodedData.color;
+        } else {
+            player.style.backgroundColor = ""; // default
+        }    
+    }
+
+    // Wieder einblenden des Buttons bei Klick
+    player.addEventListener("click", () => {
+    });
+</script>
+</body>
+</html>

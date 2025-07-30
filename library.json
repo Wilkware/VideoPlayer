@@ -1,0 +1,12 @@
+{
+    "id": "{7B77AE16-6CB1-C792-5349-83E0482E7654}",
+    "name": "Video Player Tile",
+    "author": "Wilkware (@Pitti)",
+    "url": "https://wilkware.de",
+    "compatibility": {
+        "version": "7.2"
+    },
+    "version": "1.0",
+    "build": 20250729,
+    "date": 1753790400
+}

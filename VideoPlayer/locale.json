@@ -1,0 +1,22 @@
+{
+    "translations": {
+        "de": {
+            "Video Player": "Videoplayer",
+            "With this module you can play videos directly in a full-size tile.": "Mit diesem Modul können Videos direkt und kachelfüllend abgespielt werden.",
+            "URL of the media resource:": "URL der Medienressource:",
+            "Play automatically": "Automatisch abspielen",
+            "Play without sound": "Ohne Ton abspielen",
+            "Repeat video automatically": "Wiedergabe wiederholen",
+            "Disable picture-in-picture mode": "Bild-in-Bild-Modus deaktivieren",
+            "Show controls": "Steuerelemente anzeigen",
+            "Hide download button": "Download-Schaltfläche ausblenden",
+            "Background color:": "Hintergrundfarbe:",
+            "BackgroundImage": "Hintergrundbild:",
+            "⚙️ Advanced settings ...": "⚙️Erweiterte Einstellungen ...",
+            "Allow dynamic changes to the media URL!": "Dynamische Änderung der Medien-URL zulassen!",
+            "Development and debug information ...": "Entwicklungs- und Debuginformationen ...",
+            "🎗️ Source code, donation and licence ...": "🎗️ Quellcode, Spende und Lizenz ...",
+            "The software is free of charge for non-commercial use, I would appreciate a donation if you like the module.": "Die Software ist für die nicht kommerzielle Nutzung kostenlos, über eine Spende bei Gefallen des Moduls würde ich mich sehr freuen."
+        }
+    }
+}

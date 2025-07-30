@@ -1,0 +1,12 @@
+{
+    "id": "{859C27EE-7558-9E88-60E7-92F2BED93B28}",
+    "name": "Video Player",
+    "url": "https://wilkware.de/ip-symcon-module/cards/",
+    "type": 3,
+    "vendor": "",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "CCVP"
+}
