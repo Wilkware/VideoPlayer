@@ -1,4 +1,4 @@
-# 📽️ Video Player Tile (Videoplayer Kachel)
+# 📽️ Video Player Tile / Videoplayer Kachel
 
 [![Version](https://img.shields.io/badge/Symcon-PHP--Modul-red.svg?style=flat-square)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
 [![Product](https://img.shields.io/badge/Symcon%20Version-7.2-blue.svg?style=flat-square)](https://www.symcon.de/produkt/)
@@ -29,13 +29,13 @@ Dank des HTML-SDKs kann dieses Modul Videos nun kachelfüllend darstellen – ei
 
 ### 3. Installation
 
-* Über den Module Store das 'VideoPlayer'-Modul installieren.
+* Über den Module Store das 'Videoplayer'-Modul installieren.
 * Alternativ über das Module Control folgende URL hinzufügen  
 `https://github.com/Wilkware/VideoPlayer` oder `git://github.com/Wilkware/VideoPlayer.git`
 
 ### 4. Einrichten der Instanzen in IP-Symcon
 
-* Unter "Instanz hinzufügen" ist das _'Video Player'_-Modul unter dem Hersteller _'Geräte'_ aufgeführt.
+* Unter "Instanz hinzufügen" ist das _'Videoplayer'_-Modul unter dem Hersteller _'Geräte'_ aufgeführt.
 Weitere Informationen zum Hinzufügen von Instanzen in der [Dokumentation der Instanzen](https://www.symcon.de/service/dokumentation/konzepte/instanzen/#Instanz_hinzufügen)
 
 __Konfigurationsseite__:
