@@ -1,4 +1,4 @@
-# 📽️ Video Player Tile / Videoplayer Kachel
+# 📽️ Videoplayer Kachel (Video Player Tile)
 
 [![Version](https://img.shields.io/badge/Symcon-PHP--Modul-red.svg?style=flat-square)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
 [![Product](https://img.shields.io/badge/Symcon%20Version-7.2-blue.svg?style=flat-square)](https://www.symcon.de/produkt/)
@@ -42,7 +42,7 @@ __Konfigurationsseite__:
 
 _Einstellungsbereich:_
 
-> Video ...
+> 📽️ Video ...
 
 Name                              | Beschreibung
 --------------------------------- | -------------------------------------------
@@ -54,14 +54,14 @@ Bild-in-Bild-Modus deaktivieren   | Steuerelement für PiP wird ausgeschalten
 Steuerelemente anzeigen           | Untere Steuerleiste wird angezeigt
 Download-Schaltfläche ausblenden  | Das Menü zum Herunterladen wird deaktiviert
 
-> Design ...
+> ✨ Design ...
 
 Name                              | Beschreibung
 --------------------------------- | -------------------------------------------
 Hintergrundfarbe                  | Hintergrundfarbe des Players
 Hintergrundbild                   | Startposter des Players
 
-> Erweiterte Einstellungen  ...
+> ⚙️ Erweiterte Einstellungen  ...
 
 Name                              | Beschreibung
 --------------------------------- | -------------------------------------------

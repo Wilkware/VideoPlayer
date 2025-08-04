@@ -13,7 +13,10 @@ class VideoPlayer extends IPSModule
     private const IPS_MIN_ID = 10000;
 
     /**
-     * Create.
+     * In contrast to Construct, this function is called only once when creating the instance and starting IP-Symcon.
+     * Therefore, status variables and module properties which the module requires permanently should be created here.
+     *
+     * @return void
      */
     public function Create(): void
     {
@@ -42,7 +45,10 @@ class VideoPlayer extends IPSModule
     }
 
     /**
-     * Destroy.
+     * This function is called when deleting the instance during operation and when updating via "Module Control".
+     * The function is not called when exiting IP-Symcon.
+     *
+     * @return void
      */
     public function Destroy(): void
     {
@@ -50,9 +56,11 @@ class VideoPlayer extends IPSModule
     }
 
     /**
-     * Configuration Form.
+     * The content can be overwritten in order to transfer a self-created configuration page.
+     * This way, content can be generated dynamically.
+     * In this case, the "form.json" on the file system is completely ignored.
      *
-     * @return string configuration string.
+     * @return string Content of the configuration page.
      */
     public function GetConfigurationForm(): string
     {
@@ -64,7 +72,9 @@ class VideoPlayer extends IPSModule
     }
 
     /**
-     * Apply Configuration Changes.
+     * Is executed when "Apply" is pressed on the configuration page and immediately after the instance has been created.
+     *
+     * @return void
      */
     public function ApplyChanges(): void
     {
@@ -96,10 +106,12 @@ class VideoPlayer extends IPSModule
     }
 
     /**
-     * RequestAction.
+     * Is called when, for example, a button is clicked in the visualization.
      *
-     *  @param string $ident Ident.
-     *  @param string $value Value.
+     * @param string $ident Ident of the variable
+     * @param string $value The value to be set
+     *
+     * @return bool Always true.
      */
     public function RequestAction($ident, $value): bool
     {
