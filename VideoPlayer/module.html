@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8" />
     <style>
@@ -24,59 +25,79 @@
             object-fit: cover;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
 </head>
+
 <body>
     <div id="card">
         <video id="player" mozallowfullscreen allowfullscreen></video>
     </div>
-<script>
-    const player = document.getElementById("player");
+    <script>
+        const player = document.getElementById("player");
 
-    function setBooleanAttribute(el, attr, value) {
-        if (value) {
-            el[attr] = true;
-            el.setAttribute(attr, ""); // imported for e.g. disablePictureInPicture
-        } else {
-            el[attr] = false;
-            el.removeAttribute(attr);
+        function setBooleanAttribute(el, attr, value) {
+            if (value) {
+                el[attr] = true;
+                el.setAttribute(attr, ""); // imported for e.g. disablePictureInPicture
+            } else {
+                el[attr] = false;
+                el.removeAttribute(attr);
+            }
         }
-    }
 
-    function setControlsList(el, disableDownload) {
-        if (disableDownload) {
-            el.setAttribute("controlsList", "nodownload");
-        } else {
-            el.removeAttribute("controlsList");
+        function setControlsList(el, disableDownload) {
+            if (disableDownload) {
+                el.setAttribute("controlsList", "nodownload");
+            } else {
+                el.removeAttribute("controlsList");
+            }
         }
-    }
 
-    // This is where the data is processed by the module.
-    function handleMessage(data) {
-        const decodedData = JSON.parse(data);
-        // source
-        player.src = decodedData.source || "";
-
-        // bool attributes safe set/remove
-        setBooleanAttribute(player, "autoplay", decodedData.autoplay);
-        setBooleanAttribute(player, "muted", decodedData.muted);
-        setBooleanAttribute(player, "loop", decodedData.loop);
-        setBooleanAttribute(player, "controls", decodedData.controls);
-        setBooleanAttribute(player, "disablePictureInPicture", decodedData.pip);
-
-        // special case controlsList
-        setControlsList(player, decodedData.list);
-
-        // background color
-        if (decodedData.color) {
-            player.style.backgroundColor = decodedData.color;
-        } else {
-            player.style.backgroundColor = ""; // default
-        }    
-    }
-
-    // Wieder einblenden des Buttons bei Klick
-    player.addEventListener("click", () => {
-    });
-</script>
+        // This is where the data is processed by the module.
+        function handleMessage(data) {
+            const decodedData = JSON.parse(data);
+            // bool attributes safe set/remove
+            setBooleanAttribute(player, "autoplay", decodedData.autoplay);
+            setBooleanAttribute(player, "muted", decodedData.muted);
+            setBooleanAttribute(player, "loop", decodedData.loop);
+            setBooleanAttribute(player, "controls", decodedData.controls);
+            setBooleanAttribute(player, "disablePictureInPicture", decodedData.pip);
+            // special case controlsList
+            setControlsList(player, decodedData.list);
+            // background color
+            if (decodedData.color) {
+                player.style.backgroundColor = decodedData.color;
+            } else {
+                player.style.backgroundColor = ""; // default
+            }
+            // source
+            if (decodedData.source) {
+                if (decodedData.hls) {
+                    if (Hls.isSupported()) {
+                        var hls = new Hls({
+                            debug: false,
+                        });
+                        hls.loadSource(decodedData.source);
+                        hls.attachMedia(player);
+                        hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+                            player.play();
+                        });
+                    }
+                    // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
+                    // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element through the `src` property.
+                    // This is using the built-in support of the plain video element, without using hls.js.
+                    else if (player.canPlayType('application/vnd.apple.mpegurl')) {
+                        player.src = decodedData.source;
+                        player.addEventListener('canplay', function () {
+                            player.play();
+                        });
+                    }
+                } else {
+                    player.src = decodedData.source;
+                }
+            }
+        }
+    </script>
 </body>
+
 </html>

@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/badge/Symcon-PHP--Modul-red.svg?style=flat-square)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
 [![Product](https://img.shields.io/badge/Symcon%20Version-7.2-blue.svg?style=flat-square)](https://www.symcon.de/produkt/)
-[![Version](https://img.shields.io/badge/Modul%20Version-1.0.20250729-orange.svg?style=flat-square)](https://github.com/Wilkware/VideoPlayer)
+[![Version](https://img.shields.io/badge/Modul%20Version-1.1.20250805-orange.svg?style=flat-square)](https://github.com/Wilkware/VideoPlayer)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg?style=flat-square)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Actions](https://img.shields.io/github/actions/workflow/status/wilkware/VideoPlayer/ci.yml?branch=main&label=CI&style=flat-square)](https://github.com/Wilkware/VideoPlayer/actions)
 
@@ -53,6 +53,7 @@ Wiedergabe wiederholen            | Das Video wird in einer Endlosschleife wiede
 Bild-in-Bild-Modus deaktivieren   | Steuerelement für PiP wird ausgeschalten
 Steuerelemente anzeigen           | Untere Steuerleiste wird angezeigt
 Download-Schaltfläche ausblenden  | Das Menü zum Herunterladen wird deaktiviert
+HLS-Wiedergabe aktivieren         | Unterstützung für HTTP Live-Streaming
 
 > ✨ Design ...
 
@@ -89,6 +90,10 @@ __Beispiel__: `IPS_RequestAction(12345, 'SetMediaUrl', 'https://youtu.be/CKjc1LH
 
 
 ### 8. Versionshistorie
+
+v1.1.20250805
+
+* _NEU_: Support HLS (HTTP Live Streaming)
 
 v1.0.20250729
 

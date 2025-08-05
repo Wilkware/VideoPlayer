@@ -33,7 +33,12 @@
                     "type": "ValidationTextBox",
                     "name": "MediaURL",
                     "caption": "URL of the media resource:",
-                    "width": "350px"
+                    "width": "450px"
+                },
+                {
+                    "type": "Label",
+                    "caption": "Appearance & Behavior:",
+                    "bold": true
                 },
                 {
                     "type": "CheckBox",
@@ -75,6 +80,16 @@
                             "width": "310px"
                         }
                     ]
+                },
+                {
+                    "type": "Label",
+                    "caption": "HTTP Live Streaming (HLS):",
+                    "bold": true
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "LiveStreaming",
+                    "caption": "Enable HLS playback"
                 }
             ]
         },

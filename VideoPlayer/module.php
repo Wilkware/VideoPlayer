@@ -31,7 +31,7 @@ class VideoPlayer extends IPSModule
         $this->RegisterPropertyBoolean('DisablePictureInPicture', true);
         $this->RegisterPropertyBoolean('Controls', true);
         $this->RegisterPropertyBoolean('NoDownload', false);
-
+        $this->RegisterPropertyBoolean('LiveStreaming', false);
         // Design
         $this->RegisterPropertyInteger('BackgroundColor', -1);
         $this->RegisterPropertyInteger('BackgroundImage', 1);
@@ -191,7 +191,8 @@ class VideoPlayer extends IPSModule
             'loop'      => $this->ReadPropertyBoolean('Loop'),
             'pip'       => $this->ReadPropertyBoolean('DisablePictureInPicture'),
             'controls'  => $this->ReadPropertyBoolean('Controls'),
-            'list'      => $this->ReadPropertyBoolean('NoDownload')
+            'list'      => $this->ReadPropertyBoolean('NoDownload'),
+            'hls'       => $this->ReadPropertyBoolean('LiveStreaming')
         ];
         $this->LogDebug(__FUNCTION__, $result);
         return json_encode($result);
