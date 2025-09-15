@@ -25,7 +25,7 @@ Dank des HTML-SDKs kann dieses Modul Videos nun kachelfüllend darstellen – ei
 
 ### 2. Voraussetzungen
 
-* IP-Symcon ab Version 7.2
+* IP-Symcon ab Version 8.1
 
 ### 3. Installation
 
