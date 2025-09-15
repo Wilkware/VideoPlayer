@@ -16,13 +16,18 @@ jobs:
       with:
         php-version: 8.2
         
-    - name: Clone symcon stubs
+    - name: Setup Symcon Stubs (clone)
       run: git clone https://github.com/symcon/SymconStubs.git ../_ips-stubs
-        
+
+    - name: Setup Symcon Styles (clone)
+      run: git clone https://github.com/Wilkware/StylePHP.git ../_ips-styles
 
     # ✅ PHP-CS-Fixer Style Check
+    - name: Download PHP-CS-Fixer
+      run: wget https://cs.symfony.com/download/php-cs-fixer-v3.phar
+
     - name: Check style
-      uses: wilkware/action-ips-style@main
+      run: php php-cs-fixer-v3.phar fix --config=../_ips-styles/.php-cs-fixer.php -v --dry-run --allow-risky=yes --path-mode=intersection .
 
     # ✅ PHPStan Static Analysis
     - name: Download PHPStan
