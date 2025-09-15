@@ -1,8 +1,8 @@
 # 📽️ Videoplayer Kachel (Video Player Tile)
 
 [![Version](https://img.shields.io/badge/Symcon-PHP--Modul-red.svg?style=flat-square)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
-[![Product](https://img.shields.io/badge/Symcon%20Version-7.2-blue.svg?style=flat-square)](https://www.symcon.de/produkt/)
-[![Version](https://img.shields.io/badge/Modul%20Version-1.1.20250805-orange.svg?style=flat-square)](https://github.com/Wilkware/VideoPlayer)
+[![Product](https://img.shields.io/badge/Symcon%20Version-8.1-blue.svg?style=flat-square)](https://www.symcon.de/produkt/)
+[![Version](https://img.shields.io/badge/Modul%20Version-1.2.20250915-orange.svg?style=flat-square)](https://github.com/Wilkware/VideoPlayer)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg?style=flat-square)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Actions](https://img.shields.io/github/actions/workflow/status/wilkware/VideoPlayer/ci.yml?branch=main&label=CI&style=flat-square)](https://github.com/Wilkware/VideoPlayer/actions)
 
@@ -90,6 +90,11 @@ __Beispiel__: `IPS_RequestAction(12345, 'SetMediaUrl', 'https://youtu.be/CKjc1LH
 
 
 ### 8. Versionshistorie
+
+v1.2.20250915
+
+* _NEU_: Projektumstrukturierung hin zu einer globalen CI/CD-Pipeline
+* _NEU_: Kompatibilität auf IPS 8.1 hoch gesetzt
 
 v1.1.20250805
 
