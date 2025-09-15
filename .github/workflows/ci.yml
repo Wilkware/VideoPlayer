@@ -6,6 +6,8 @@ jobs:
   ci:
     name: "CI Pipeline"
     runs-on: ubuntu-latest
+    env: # 👈 available to ALL steps
+      IPS_STUBS_PATH: ${{ github.workspace }}/../_ips-stubs
 
     steps:
     - name: Checkout repository
@@ -41,6 +43,4 @@ jobs:
       run: wget https://github.com/phpstan/phpstan/releases/latest/download/phpstan.phar
 
     - name: Static Analysis
-      env:
-        IPS_STUBS_PATH: ${{ github.workspace }}/../_ips-stubs
       run: php phpstan.phar analyse --configuration=phpstan.neon
