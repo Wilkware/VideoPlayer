@@ -8,6 +8,8 @@
 
 Mit diesem Modul können Videos direkt und kachelfüllend in der TileVisu abgespielt werden.
 
+![Module-Visu](imgs/video-player.png)
+
 ## Inhaltverzeichnis
 
 1. [Funktionsumfang](#user-content-1-funktionsumfang)

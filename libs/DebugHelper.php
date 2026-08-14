@@ -14,6 +14,10 @@
 
 declare(strict_types=1);
 
+/** @symcon-namespace */
+
+namespace Wilkware\VideoPlayer;
+
 /**
  * Helper class for the debug output.
  */

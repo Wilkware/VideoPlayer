@@ -2,15 +2,33 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../libs/_traits.php';  // Generell funktions
+/** Generell funktions  */
+require_once __DIR__ . '/../libs/_traits.php';
 
-// CLASS VideoPlayer
+/** Namespaced traits */
+use Wilkware\VideoPlayer\DebugHelper;
+
+/**
+ *  CLASS VideoPlayer
+ */
 class VideoPlayer extends IPSModule
 {
-    use DebugHelper;
+     // -------------------------------------------------------------------------
+    // Traits
+    // -------------------------------------------------------------------------
 
-    // Min IPS Object ID
+   use DebugHelper;
+
+    // -------------------------------------------------------------------------
+    // Constants
+    // -------------------------------------------------------------------------
+
+    /** @var int Min IPS Object ID */
     private const IPS_MIN_ID = 10000;
+
+    // -------------------------------------------------------------------------
+    // Methods
+    // -------------------------------------------------------------------------
 
     /**
      * In contrast to Construct, this function is called only once when creating the instance and starting IP-Symcon.
